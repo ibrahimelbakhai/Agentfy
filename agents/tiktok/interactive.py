@@ -1,3 +1,4 @@
+import os
 import requests
 import webbrowser
 import http.server
@@ -6,11 +7,14 @@ import urllib.parse
 import secrets
 import hashlib
 import base64
+from dotenv import load_dotenv
 
-# TikTok API credentials (replace with your own)
-CLIENT_KEY = "sbawvm8oh1mwx452w0"  # Your Client Key
-CLIENT_SECRET = "qoYJpv7ATdmaYFboYKoQxnFSYglrZufS"  # From TikTok Developer Portal
-REDIRECT_URI = "https://c5c5-172-117-224-157.ngrok-free.app"  # Must match Developer Portal
+load_dotenv()
+
+# TikTok API credentials loaded from environment variables
+CLIENT_KEY = os.getenv("TIKTOK_CLIENT_KEY")
+CLIENT_SECRET = os.getenv("TIKTOK_CLIENT_SECRET")
+REDIRECT_URI = os.getenv("TIKTOK_REDIRECT_URI")
 VIDEO_URL = "https://your-verified-domain.com/video.mp4"  # Verified domain
 
 # Step 1: Generate code_verifier and code_challenge for PKCE

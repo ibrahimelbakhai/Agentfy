@@ -80,11 +80,14 @@ Agentfy supports **multi-agent communication and collaboration**, allowing sub-a
    - Required API keys and configurations can be found in `config.py`
    - Example `.env` file:
      ```
-     OPENAI_API_KEY=your_key_here
-     X_API_KEY=your_key_here
-     X_API_SECRET=your_secret_here
-     YOUTUBE_API_KEY=your_key_here
-     ....
+      OPENAI_API_KEY=your_key_here
+      X_API_KEY=your_key_here
+      X_API_SECRET=your_secret_here
+      YOUTUBE_API_KEY=your_key_here
+      TIKTOK_CLIENT_KEY=your_key_here
+      TIKTOK_CLIENT_SECRET=your_secret_here
+      TIKTOK_REDIRECT_URI=https://your-redirect-url
+      ....
      ```
 
 > ⚠️ Notes: You need to obtain API keys for the respective platforms you want to interact with (e.g., TikTok, Twitter, YouTube, etc.) If you are having trouble getting the API keys, please contact us lqiu314@gmail.com
