@@ -1758,6 +1758,136 @@
           }
         }
       ]
+    },
+    "telegram": {
+      "interactive": [
+        {
+          "agent_id": "telegram_interactive",
+          "function_id": "send_message",
+          "description": "Send a text message using the Telegram Bot API",
+          "parameters": [
+            {
+              "name": "chat_id",
+              "type": "str",
+              "description": "Target chat ID",
+              "required": true
+            },
+            {
+              "name": "text",
+              "type": "str",
+              "description": "Message text",
+              "required": true
+            },
+            {
+              "name": "token",
+              "type": "str",
+              "description": "Telegram bot token",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "Dict[str, str]",
+            "description": "Result of the send operation including status and message ID"
+          }
+        },
+        {
+          "agent_id": "telegram_interactive",
+          "function_id": "send_photo",
+          "description": "Send a photo with optional caption via Telegram",
+          "parameters": [
+            {
+              "name": "chat_id",
+              "type": "str",
+              "description": "Target chat ID",
+              "required": true
+            },
+            {
+              "name": "photo_url",
+              "type": "str",
+              "description": "URL of the photo",
+              "required": true
+            },
+            {
+              "name": "caption",
+              "type": "str",
+              "description": "Photo caption",
+              "required": true
+            },
+            {
+              "name": "token",
+              "type": "str",
+              "description": "Telegram bot token",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "Dict[str, str]",
+            "description": "Result of the send operation including status and message ID"
+          }
+        }
+      ]
+    },
+    "facebook": {
+      "interactive": [
+        {
+          "agent_id": "facebook_interactive",
+          "function_id": "post_to_page",
+          "description": "Post a text update to a Facebook page",
+          "parameters": [
+            {
+              "name": "page_id",
+              "type": "str",
+              "description": "Target page ID",
+              "required": true
+            },
+            {
+              "name": "message",
+              "type": "str",
+              "description": "Text content to publish",
+              "required": true
+            },
+            {
+              "name": "access_token",
+              "type": "str",
+              "description": "Facebook page access token",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "Dict[str, str]",
+            "description": "Result of the post operation including status and post ID"
+          }
+        },
+        {
+          "agent_id": "facebook_interactive",
+          "function_id": "send_message",
+          "description": "Send a direct message from a Facebook page",
+          "parameters": [
+            {
+              "name": "recipient_id",
+              "type": "str",
+              "description": "ID of the recipient user",
+              "required": true
+            },
+            {
+              "name": "message",
+              "type": "str",
+              "description": "Message text",
+              "required": true
+            },
+            {
+              "name": "access_token",
+              "type": "str",
+              "description": "Facebook page access token",
+              "required": true
+            }
+          ],
+          "returns": {
+            "type": "Dict[str, str]",
+            "description": "Result of the send operation including status and message ID"
+          }
+        }
+      ]
     }
   }
 }
